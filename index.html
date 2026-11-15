@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#1c1c1f">
+<title>קמפוס · ניהול האתרים</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='10' fill='none' stroke='%23ff2d8a' stroke-width='4'/%3E%3Cpath d='M6 26L26 6' stroke='%23ff2d8a' stroke-width='4'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="win">
+  <div id="titlebar">
+    <div class="lights" dir="ltr"><i class="r"></i><i class="y"></i><i class="g"></i></div>
+    <svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="9.5" fill="none" stroke="currentColor" stroke-width="3"/><path d="M6.5 25.5 25.5 6.5" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+  </div>
+  <div id="app">
+    <canvas id="scene" aria-label="קמפוס תלת-ממדי: חדר לכל אתר"></canvas>
+
+    <div id="hud-top">
+      <button class="hpill" id="pill-tasks"><i class="dot pink"></i><span>משימות בביצוע</span><b id="n-tasks">0</b></button>
+      <div id="toolbar">
+        <button class="tb q" id="tb-help" title="עזרה">?</button>
+        <span class="tb upd" id="tb-upd"></span>
+        <button class="tb" id="tb-search" title="חיפוש"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg></button>
+        <input id="search" type="search" placeholder="חיפוש אתר…" hidden>
+        <span class="tb new" id="tb-new"></span>
+        <button class="tb" id="tb-dec" title="ממתין לאישורך"><span class="pinkt" id="n-dec2">0</span><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/></svg></button>
+        <button class="tb" id="tb-credits" title="קרדיטים"><b>?</b><span class="batt"><i></i></span></button>
+        <span class="tb counts" id="tb-counts"></span>
+      </div>
+      <button class="hpill appr" id="pill-appr"><i class="dot pink"></i><span>ממתין לאישור שלך</span><b id="n-appr">0</b></button>
+    </div>
+    <div id="chips"></div>
+
+    <aside id="p-tasks" class="panel left" hidden>
+      <header><i class="dot pink"></i><h3>משימות בביצוע · <span id="n-tasks2"></span></h3><button class="min" data-close="p-tasks">−</button></header>
+      <div class="pbody" id="tasks-body"></div>
+    </aside>
+    <aside id="p-right" class="panel right" hidden>
+      <div id="right-body"></div>
+    </aside>
+
+    <div id="feedbar"><span class="live">לייב</span><span id="feed-line"></span><button id="feed-all">כל הפיד</button></div>
+    <div id="mapctl" dir="ltr">
+      <button data-act="home" title="מבט כללי"><svg viewBox="0 0 24 24"><path d="M4 11 12 4l8 7v9h-5v-6H9v6H4z"/></svg></button>
+      <button data-act="rotl" title="סיבוב">⟲</button><button data-act="rotr" title="סיבוב">⟳</button>
+      <button data-act="out" title="התרחקות">−</button><button data-act="in" title="התקרבות">+</button>
+    </div>
+    <div id="tip" hidden></div>
+    <div id="toast" hidden></div>
+  </div>
+</div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
